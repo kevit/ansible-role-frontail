@@ -1,0 +1,5 @@
+---
+- name: Install "coffee-script" node.js package.
+  npm:
+    name: frontail
+    path: /opt/frontail

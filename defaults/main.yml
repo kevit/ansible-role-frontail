@@ -1,0 +1,16 @@
+---
+nodejs_version: "4.x"
+nodejs_npm_global_packages:
+  - frontail
+
+frontail_host: "127.0.0.1"
+frontail_port: "9001"
+frontail_log_path: "/var/log/syslog"
+
+
+systemd_service_name: "frontail"
+systemd_service_envs: ''
+systemd_service_Unit_Description: "frontail log access"
+systemd_service_Unit_Requires: ''
+systemd_service_Unit_After: ''
+systemd_service_Service_ExecStart: "/opt/frontail/node_modules/frontail/bin/frontail -h {{ frontail_host }} -p {{ frontail_port }} {{ frontail_log_path }}"
